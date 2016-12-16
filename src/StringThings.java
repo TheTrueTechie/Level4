@@ -39,3 +39,7 @@ public class StringThings {
 		
 	}
 }
+
+
+
+//Copyright ©TheTrueTechies

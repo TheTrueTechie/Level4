@@ -77,3 +77,6 @@ public class PalindromesTest {
 	}
 
 }
+
+
+//Copyright ©TheTrueTechies

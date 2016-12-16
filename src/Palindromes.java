@@ -42,3 +42,6 @@ StringBuffer howtodothiseasier = new StringBuffer(string);
 
 	}
 	}
+
+
+//Copyright ©TheTrueTechies
