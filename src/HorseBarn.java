@@ -7,10 +7,10 @@ public class HorseBarn {
 
 		HorseBarn b = new HorseBarn();
 		b.a[0] = new Horse("Trigger", 1340);
-		b.a[1] = new Horse(null, -1);
+		b.a[1] = null;
 		b.a[2] = new Horse("Silver", 1210);
 		b.a[3] = new Horse("Lady", 1575);
-		b.a[4] = new Horse(null, -1);
+		b.a[4] = null;
 		b.a[5] = new Horse("Patches", 1350);
 		b.a[6] = new Horse("Duke", 1410);
 
@@ -20,12 +20,15 @@ public class HorseBarn {
 	public int findHorseSpace(String string) {
 		for (int i = 0; i < a.length; i++) {
 
-			if (string.equals(a[i].getName())) {
+			if (a[i] != null) {
+				if (string.equals(a[i].getName())) {
 
-				return i;
+					return i;
+				}
 			}
+
 		}
-		return -1; 
+		return -1;
 	}
 
 	public Horse[] getSpaces() {
@@ -34,7 +37,33 @@ public class HorseBarn {
 	}
 
 	public void consolidate() {
-		// TODO Auto-generated method stub
+		int goodVar = 0;
+		int nullVar = 0;
+		int middleVar = 0;
+		for (int i = 0; i < a.length; i++) {
+			
+
+			if (a[i] != null) {
+				goodVar = i;
+				middleVar = goodVar;
+
+			}
+
+			if (a[i] == null) {
+				nullVar = i;
+
+			}
+
+			if (goodVar > nullVar) {
+
+				a[nullVar] = a[middleVar];
+
+				a[middleVar] = null;
+
+				nullVar = middleVar;
+			}
+
+		}
 
 	}
 
