@@ -39,28 +39,30 @@ public class HorseBarn {
 	public void consolidate() {
 		int goodVar = 0;
 		int nullVar = 0;
-		int middleVar = 0;
+
 		for (int i = 0; i < a.length; i++) {
-			
 
 			if (a[i] != null) {
 				goodVar = i;
-				middleVar = goodVar;
+				// middleVar = goodVar;
 
 			}
 
 			if (a[i] == null) {
-				nullVar = i;
 
+				if (a[nullVar] != null) {
+					nullVar = i;
+				}
 			}
 
 			if (goodVar > nullVar) {
 
-				a[nullVar] = a[middleVar];
+				a[nullVar] = a[goodVar];
 
-				a[middleVar] = null;
+				a[goodVar] = null;
 
-				nullVar = middleVar;
+				nullVar++;
+
 			}
 
 		}
