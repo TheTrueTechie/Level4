@@ -1,9 +1,8 @@
 public class Kata {
 
 	public static String autocorrect(String inputs) {
-		String s = "";
-		s = inputs.replaceAll("(?i)u+\\b|you+\\b", "your sister");
-		return s;
+
+		return inputs.replaceAll("(?i)u+\\b|you+\\b", "your sister");
 
 		/*
 		 * String split[] = inputs.split("");
